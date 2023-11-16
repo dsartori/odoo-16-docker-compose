@@ -35,4 +35,4 @@ services:
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
       - ./root:/root # for Odoo filestore
-    restart: always             # run as a service
+    restart: always  # run as a service
