@@ -4,12 +4,10 @@ FROM postgres:15
 RUN apt-get update && apt-get -y install cron
 
 # Copy the pg credentials file
-COPY .pgpass /root/.pgpass
+COPY .pgpass /root/
 
 # Permission the pg credentials file
 RUN chmod 600 /root/.pgpass
-
-
 
 # Copy the crontab file to the cron.d directory
 COPY crontab /etc/cron.d/crontab
@@ -21,7 +19,7 @@ RUN chmod 0644 /etc/cron.d/crontab
 RUN touch /var/log/cron.log
 
 # Run the command on container startup
-CMD cron && tail -f /var/log/cron.log
+# CMD cron && tail -f /var/log/cron.log
 
 # Add any customizations you need here
 

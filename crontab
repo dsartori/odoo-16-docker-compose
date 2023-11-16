@@ -1,2 +1,2 @@
-0 0 * * * /usr/bin/pg_dump --no-password -U odoo odoo > /root/
+0 0 * * * /usr/bin/pg_dump --no-password -U odoo ceecam > /root/
 # Don't remove the empty line at the end of this file. It is required to run the cron job
