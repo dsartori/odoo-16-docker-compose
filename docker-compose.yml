@@ -1,7 +1,10 @@
 version: '2'
+
 services:
   db:
-    image: postgres:15
+    build:
+      context: .
+      dockerfile: Dockerfile-postgres
     user: root
     environment:
       - POSTGRES_USER=odoo
@@ -31,5 +34,5 @@ services:
       # - ./entrypoint.sh:/entrypoint.sh   # if you want to install additional Python packages, uncomment this line!
       - ./addons:/mnt/extra-addons
       - ./etc:/etc/odoo
+      - ./root:/root # for Odoo filestore
     restart: always             # run as a service
-    
