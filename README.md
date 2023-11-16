@@ -133,3 +133,21 @@ server {
 <img src="screenshots/odoo-16-sales-screen.png" width="100%">
 
 <img src="screenshots/odoo-16-product-form.png" width="100%">
+
+
+## Upgrade to Enterprise
+
+Do these steps BEFORE creating the database otherwise you will have to perform
+an upgrade
+
+*  sudo service odoo stop
+*  sudo dpkg -i <path_to_enterprise_deb>
+
+## Notes for Unraid deployment
+
+On Unraid, the volume mount points identified will not work as they are 
+contained in the /boot volume which is special. All uncommented volumes should
+be pointed to a mount point instead, so for Unraid installations you will want
+to review your list of mount points and choose one of them. For example, in the
+local P42 environment it makes sense to relocate these volumes to 
+/mnt/users/ceecam
