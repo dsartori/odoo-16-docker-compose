@@ -2,6 +2,8 @@
 # Use the official Odoo 17 image as a base
 FROM odoo:17
 
+USER root
+
 # Copy the .deb file into the container
 COPY odoo_17.0+e.latest_all.deb /tmp/
 
