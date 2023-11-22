@@ -4,3 +4,5 @@ etc/addons/
 etc/sessions/
 etc/filestore/
 *.deb
+.DS_Store
+```

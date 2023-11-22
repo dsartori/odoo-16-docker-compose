@@ -14,8 +14,10 @@ services:
     volumes:
         - ./postgresql:/var/lib/postgresql/data
 
-  odoo16:
-    image: odoo:16
+  odoo17:
+    build:
+      context: .
+      dockerfile: Dockerfile-odoo
     user: root
     depends_on:
       - db
